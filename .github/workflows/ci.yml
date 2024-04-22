@@ -25,6 +25,14 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
+    - name: build and push image
+      uses: mr-smithers-excellent/docker-build-push@v6
+      with:
+        image: srayarao/private-repo/grade:v1
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
     # - name: Build and Push Docker Image
     #   uses: mr-smithers-excellent/docker-build-push@v4
     #   with:
