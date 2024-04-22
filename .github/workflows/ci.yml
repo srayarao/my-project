@@ -28,7 +28,7 @@ jobs:
     - name: build and push image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
-        image: srayarao/private-repo/grade:v1
+        image: srayarao/private-repo/grade
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
