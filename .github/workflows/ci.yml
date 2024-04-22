@@ -23,7 +23,7 @@ jobs:
       run: chmod +x gradlew
 
     - name: show directory
-      run: ls -lt ./build/libs/
+      run: ls -lt
 
     - name: Build with Gradle
       run: ./gradlew build
