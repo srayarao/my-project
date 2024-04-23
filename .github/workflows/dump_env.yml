@@ -8,3 +8,7 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: Print owner info
+        env:
+          GITHUB_OWNER: ${{ toJson(github.repository_owner) }}
+        run: echo "$GITHUB_OWNER"
