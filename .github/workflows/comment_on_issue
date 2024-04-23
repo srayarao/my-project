@@ -1,0 +1,13 @@
+name: Add comment to Issue
+on:
+  issues:
+    types:
+      - opened
+job: 'Job to add a comment'
+  runs_on: ubuntu_latest
+  steps:
+    - name: Dump Env Variables
+      env:
+        GITHUB_CONTEXT: {{tojson(github)}}
+      run: echo $GITHUB_CONTEXT
+      
