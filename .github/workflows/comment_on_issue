@@ -1,12 +1,21 @@
 name: Add comment to Issue
 on: [workflow_dispatch]
-
+jobs:
+  add_comment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dump Env Variables
+      env:
+        
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
 jobs: 
   add_comment:
     runs_on: ubuntu_latest
     steps:
       - name: Dump Env Variables
         env:
-          GITHUB_CONTEXT: {{tojson(github)}}
-        run: echo $GITHUB_CONTEXT
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       
