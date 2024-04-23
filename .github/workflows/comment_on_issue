@@ -1,8 +1,6 @@
 name: Add comment to Issue
-on:
-  issues:
-    types:
-      - opened
+on: [workflow_dispatch]
+
 job: 'Job to add a comment'
   runs_on: ubuntu_latest
   steps:
