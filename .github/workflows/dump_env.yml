@@ -1,4 +1,4 @@
-name: Add comment to Issue
+name: Dump Specific Env Info
 on: [workflow_dispatch]
 jobs:
   add_comment:
