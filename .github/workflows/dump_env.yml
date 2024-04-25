@@ -12,8 +12,11 @@ jobs:
         env:
           GITHUB_OWNER: ${{ toJson(github.repository_owner) }}
         run: echo "$GITHUB_OWNER"
-      - env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_URL: ${{ github.event.issue.html_url }}
-        run: |
-          echo "$ISSUE_URL"
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-create-comment@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          number: 1
+          body: |
+            Hello, @${{ github.repository_owner }}!
+
