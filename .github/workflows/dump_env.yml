@@ -1,5 +1,5 @@
 name: Dump Specific Env Info
-on: [issue_comment]
+on: [workflow_dispatch]
 jobs:
   add_comment:
     runs-on: ubuntu-latest
@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-create-comment@v1
         with:
+          number: 1
           github_token: ${{ secrets.github_token }}
           body: |
             Hello, @${{ github.repository_owner }}!
