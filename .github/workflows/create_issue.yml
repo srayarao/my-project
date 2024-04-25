@@ -20,7 +20,7 @@ jobs:
           body: |
             ## This week's TODO
             Context Is , ${{ steps.date.outputs.context }}!
-            Added by $NAME
+            Added by ${{ env.NAME }}
             - [ ] Have a meeting with UX team
             - [ ] Check the dashboard
             
