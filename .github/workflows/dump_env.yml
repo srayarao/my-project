@@ -19,4 +19,9 @@ jobs:
           github_token: ${{ secrets.github_token }}
           body: |
             Hello, @${{ github.repository_owner }}!
+      - name: add label
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          number: 1
+          labels: bug
 
