@@ -1,5 +1,5 @@
 name: Dump Specific Env Info
-on: [[issue_comment]]
+on: [issue_comment]
 jobs:
   add_comment:
     runs-on: ubuntu-latest
