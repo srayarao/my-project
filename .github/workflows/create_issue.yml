@@ -1,5 +1,7 @@
 name: Create a new Issue
 on: [workflow_dispatch]
+env:
+  NAME: "srini"
 jobs:
   add_comment:
     runs-on: ubuntu-latest
@@ -14,14 +16,15 @@ jobs:
         uses: actions-ecosystem/action-create-issue@v1
         with:
           github_token: ${{ secrets.github_token }}
-          title: "New Issue + ${{ steps.date.outputs.today }}"
+          title: "New Issue on ${{ steps.date.outputs.today }}"
           body: |
             ## This week's TODO
-            Context Is , @${{ steps.date.outputs.context }}!
-            Added by Srini
+            Context Is , ${{ steps.date.outputs.context }}!
+            Added by $NAME
             - [ ] Have a meeting with UX team
             - [ ] Check the dashboard
             
           labels: |
             meeting
             weekly
+      
