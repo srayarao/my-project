@@ -12,13 +12,8 @@ jobs:
         env:
           GITHUB_OWNER: ${{ toJson(github.repository_owner) }}
         run: echo "$GITHUB_OWNER"
-      - name: Create comment
-        uses: peter-evans/create-or-update-comment@v4
-        with:
-          issue-number: 1
-          body: |
-            This is a multi-line test comment
-            - With GitHub **Markdown** :sparkles:
-            - Created by [create-or-update-comment][1]
-            [1]: https://github.com/peter-evans/create-or-update-comment
-          reactions: '+1'
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          gh issue edit $ISSUE_URL --add-label "triage"
