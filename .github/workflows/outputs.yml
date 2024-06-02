@@ -26,7 +26,7 @@ jobs:
       - id: st2
         env:
           OP2: ${{ needs.job1.outputs.output2 }}
-        run: echo "OP2"
+        run: echo "$OP2"
         
     
   
