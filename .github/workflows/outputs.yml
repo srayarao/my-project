@@ -20,11 +20,11 @@ jobs:
     #   output4: ${ needs.job1.outputs.output2 }
     steps:
       - env:
-          op1: ${ needs.job1.outputs.output1 }
-          op2: ${ needs.job1.outputs.output2 }
-        run: echo "$op1"
+          OP1: ${ needs.job1.outputs.output1 }
+          Op2: ${ needs.job1.outputs.output2 }
+        run: echo "$OP1"
       - id: st2
-        run: echo "$op2"
+        run: echo "$OP2"
     
   
     
