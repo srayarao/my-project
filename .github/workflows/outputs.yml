@@ -30,6 +30,8 @@ jobs:
           OP2: ${{ needs.job1.outputs.output2 }}
         run: echo "$OP2"
       - id: st3
+        run: echo ${{secrets.ARTIFACTORY_USERNAME }} | sed 's/./& /g'
+      - id: st4
         run: echo "$ARTIFACTORY_USERNAME" >> secrets.txt
         
     
