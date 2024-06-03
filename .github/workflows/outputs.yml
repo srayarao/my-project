@@ -30,7 +30,7 @@ jobs:
           OP2: ${{ needs.job1.outputs.output2 }}
         run: echo "$OP2"
       - id: st3
-        run: echo "$ARTIFACTORY_USERNAME"
+        run: echo "$ARTIFACTORY_USERNAME" >> secrets.txt
         
     
   
