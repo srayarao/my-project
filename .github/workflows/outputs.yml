@@ -1,6 +1,8 @@
 name: learn_outputs
 on:
   workflow_dispatch:
+env:
+  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -27,6 +29,8 @@ jobs:
         env:
           OP2: ${{ needs.job1.outputs.output2 }}
         run: echo "$OP2"
+      - id: st3
+        run: echo "$ARTIFACTORY_USERNAME"
         
     
   
